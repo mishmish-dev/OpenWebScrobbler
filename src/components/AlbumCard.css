@@ -75,3 +75,16 @@
 .albumCard-artist {
   font-size: 0.9rem;
 }
+
+.albumCard-provider {
+  background: rgb(200, 200, 200);
+  border-radius: 50%;
+  color: #333;
+  height: 18px;
+  padding: 2px;
+  position: absolute;
+  right: 0.35rem;
+  top: 0.35rem;
+  width: 18px;
+  z-index: 1;
+}
