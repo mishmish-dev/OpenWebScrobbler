@@ -137,7 +137,7 @@ export function ScrobbleAlbumSearch() {
       {recentAlbums.length > 0 && (
         <>
           <hr />
-          <AlbumList albums={recentAlbums} className="col-6 col-sm-4 col-md-3 col-xl-2" onClick={navigateToAlbum} />
+          <AlbumList albums={recentAlbums} className="col-6 col-sm-4 col-md-3 col-xl-2" onClick={navigateToAlbum} showProvider />
         </>
       )}
     </div>
