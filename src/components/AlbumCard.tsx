@@ -6,15 +6,7 @@ import type { CSSProperties } from 'react';
 import 'react-lazy-load-image-component/src/effects/opacity.css';
 import './AlbumCard.css';
 
-import { PROVIDER_BANDCAMP, PROVIDER_DISCOGS, PROVIDER_LASTFM, PROVIDER_NAME } from 'Constants';
-import type { Provider } from 'Constants';
 import type { AlbumCover, AlbumCoverSizes } from 'utils/types/album';
-
-const providerFavicons: Partial<Record<Provider, string>> = {
-  [PROVIDER_LASTFM]: '/lastfm-favicon.png',
-  [PROVIDER_DISCOGS]: '/discogs-favicon.png',
-  [PROVIDER_BANDCAMP]: '/bandcamp-favicon.png',
-};
 
 interface AlbumCardProps {
   artist?: string;
@@ -24,8 +16,6 @@ interface AlbumCardProps {
   interactive?: boolean;
   name?: string;
   year?: string | number;
-  provider?: Provider;
-  showProvider?: boolean;
 }
 
 export default function AlbumCard({
@@ -36,8 +26,6 @@ export default function AlbumCard({
   className = '',
   year,
   interactive = false,
-  provider,
-  showProvider = false,
 }: AlbumCardProps) {
   const albumCardStyle: CSSProperties = {};
   let srcset = '';
@@ -77,14 +65,6 @@ export default function AlbumCard({
     >
       {albumArt}
       {albumCaption}
-      {showProvider && provider && provider !== PROVIDER_LASTFM && providerFavicons[provider] && (
-        <img
-          className="albumCard-provider"
-          src={providerFavicons[provider]}
-          alt={provider}
-          title={PROVIDER_NAME[provider]}
-        />
-      )}
     </div>
   );
 }
